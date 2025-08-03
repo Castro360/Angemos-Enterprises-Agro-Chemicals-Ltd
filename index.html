@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angemos Agro-Chemicals Ltd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-green-100 via-lime-100 to-emerald-200 text-gray-800">
+
+  <header class="bg-gradient-to-r from-emerald-600 via-green-600 to-lime-500 text-white text-center py-8 shadow-lg">
+    <div class="flex items-center">
+      <img id="logTabBtn" src="c:\Users\L\Pictures\cc885ecb-1225-4f78-a9be-8e1541a96cd1.png" alt="POS Log" title="View POS Log" class="w-16 h-16 rounded-full shadow-lg cursor-pointer hover:scale-110 transition bg-white border-2 border-green-800 p-2 mr-4" />
+      <div>
+        <h1 class="text-3xl font-bold text-left">Angemos Enterprises Agro-Chemicals Ltd</h1>
+        <p class="text-sm mt-1 text-left">Empowering farmers with quality agro solutions</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-gradient-to-r from-emerald-700 via-green-700 to-lime-600 text-white flex justify-center space-x-6 py-3 shadow">
+    <a href="#about" class="hover:underline">About</a>
+    <a href="#products" class="hover:underline">Products</a>
+    <a href="#feedback" class="hover:underline">Feedback</a>
+    <a href="#contact" class="hover:underline">Contact</a>
+  </nav>
+
+  <main class="p-6 max-w-5xl mx-auto">
+    <aside id="logSidebar" class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 p-6 transition-transform transform -translate-x-full" style="max-width:90vw;overflow-y:auto;">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">POS Log</h2>
+        <button id="closeLogSidebar" class="text-gray-500 hover:text-red-600 text-2xl font-bold">&times;</button>
+      </div>
+      <ul id="logList" class="space-y-2 text-sm"></ul>
+    </aside>
+
+    <section id="about" class="bg-gradient-to-br from-white via-lime-50 to-green-100 rounded-xl shadow p-6 mb-6 border border-lime-200">
+      <h2 class="text-xl font-semibold mb-2">About Us</h2>
+      <p>
+        Angemos Enterprises Agro-Chemicals Limited is a Kenyan agrovet company dedicated to supporting farmers with trusted agricultural inputs and livestock solutions.
+        We provide certified seeds, fertilizers, pesticides, and veterinary products at affordable prices.
+      </p>
+      <img src="assets/images/farm.jpg" alt="Farming" class="mt-4 rounded shadow-md w-full max-h-64 object-cover">
+    </section>
+
+    <section id="products" class="bg-gradient-to-br from-white via-emerald-50 to-lime-100 rounded-xl shadow p-6 mb-6 border border-emerald-200">
+      <h2 class="text-xl font-semibold mb-4">Our Products</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-green-100 p-4 rounded shadow">
+          <img src="assets/images/pesticide.jpg" alt="Pesticides" class="rounded mb-2 h-32 w-full object-cover">
+          <h3 class="font-bold">Pesticides</h3>
+          <p>Protect crops from pests with our approved solutions.</p>
+        </div>
+          <div class="bg-gradient-to-br from-lime-100 via-green-100 to-emerald-50 p-4 rounded shadow">
+          <img src="assets/images/vet.jpg" alt="Veterinary Drugs" class="rounded mb-2 h-32 w-full object-cover">
+          <h3 class="font-bold">Veterinary Drugs</h3>
+          <p>Animal health medications and supplements for livestock.</p>
+        </div>
+        <div class="bg-green-100 p-4 rounded shadow">
+          <img src="assets/images/fertilizer.jpg" alt="Fertilizers" class="rounded mb-2 h-32 w-full object-cover">
+          <h3 class="font-bold">Fertilizers</h3>
+          <p>Improve soil productivity with organic and chemical fertilizers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POS Tab Button and Sidebar (Top Right) -->
+    <button id="posTabBtn" class="fixed top-6 right-6 z-50 bg-green-700 text-white px-4 py-2 rounded-l-lg shadow-lg hover:bg-green-800 transition">Point of Sale</button>
+    <aside id="posSidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 p-6 transition-transform transform translate-x-full" style="max-width:90vw;overflow-y:auto;">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Point of Sale (POS)</h2>
+        <button id="closePosSidebar" class="text-gray-500 hover:text-red-600 text-2xl font-bold">&times;</button>
+      </div>
+      <form id="posForm" class="space-y-4">
+        <div>
+          <label for="product" class="block font-medium mb-1">Product</label>
+          <select id="product" name="product" class="w-full border rounded px-3 py-2" required>
+            <option value="">Select a product</option>
+            <optgroup label="Seeds">
+              <option value="Maize Seeds" data-price="300">Maize Seeds (Ksh 300)</option>
+              <option value="Bean Seeds" data-price="250">Bean Seeds (Ksh 250)</option>
+              <option value="Sorghum Seeds" data-price="200">Sorghum Seeds (Ksh 200)</option>
+              <option value="Vegetable Seeds" data-price="150">Vegetable Seeds (Ksh 150)</option>
+              <option value="Sunflower Seeds" data-price="350">Sunflower Seeds (Ksh 350)</option>
+              <option value="Tomato Seeds" data-price="180">Tomato Seeds (Ksh 180)</option>
+              <option value="Onion Seeds" data-price="170">Onion Seeds (Ksh 170)</option>
+              <option value="Cabbage Seeds" data-price="160">Cabbage Seeds (Ksh 160)</option>
+            </optgroup>
+            <optgroup label="Fertilizers">
+              <option value="DAP Fertilizer" data-price="800">DAP Fertilizer (Ksh 800)</option>
+              <option value="CAN Fertilizer" data-price="750">CAN Fertilizer (Ksh 750)</option>
+              <option value="NPK Fertilizer" data-price="850">NPK Fertilizer (Ksh 850)</option>
+              <option value="Organic Fertilizer" data-price="600">Organic Fertilizer (Ksh 600)</option>
+              <option value="Urea" data-price="700">Urea (Ksh 700)</option>
+              <option value="Lime" data-price="500">Lime (Ksh 500)</option>
+              <option value="Compost" data-price="400">Compost (Ksh 400)</option>
+            </optgroup>
+            <optgroup label="Pesticides & Herbicides">
+              <option value="Insecticide" data-price="500">Insecticide (Ksh 500)</option>
+              <option value="Herbicide" data-price="550">Herbicide (Ksh 550)</option>
+              <option value="Fungicide" data-price="600">Fungicide (Ksh 600)</option>
+              <option value="Acaricide" data-price="650">Acaricide (Ksh 650)</option>
+              <option value="Rodenticide" data-price="700">Rodenticide (Ksh 700)</option>
+              <option value="Miticide" data-price="620">Miticide (Ksh 620)</option>
+              <option value="Molluscicide" data-price="580">Molluscicide (Ksh 580)</option>
+            </optgroup>
+            <optgroup label="Veterinary Drugs & Supplies">
+              <option value="Dewormers" data-price="400">Dewormers (Ksh 400)</option>
+              <option value="Antibiotics" data-price="1200">Antibiotics (Ksh 1200)</option>
+              <option value="Vitamins & Supplements" data-price="700">Vitamins & Supplements (Ksh 700)</option>
+              <option value="Vaccines" data-price="1500">Vaccines (Ksh 1500)</option>
+              <option value="Tick Control" data-price="900">Tick Control (Ksh 900)</option>
+              <option value="Wound Spray" data-price="350">Wound Spray (Ksh 350)</option>
+              <option value="Calcium Supplements" data-price="500">Calcium Supplements (Ksh 500)</option>
+              <option value="Syringes" data-price="100">Syringes (Ksh 100)</option>
+              <option value="Drenching Gun" data-price="800">Drenching Gun (Ksh 800)</option>
+            </optgroup>
+            <optgroup label="Animal Feeds">
+              <option value="Dairy Meal" data-price="1200">Dairy Meal (Ksh 1200)</option>
+              <option value="Poultry Feed" data-price="1000">Poultry Feed (Ksh 1000)</option>
+              <option value="Pig Feed" data-price="950">Pig Feed (Ksh 950)</option>
+              <option value="Dog Food" data-price="850">Dog Food (Ksh 850)</option>
+              <option value="Fish Feed" data-price="1100">Fish Feed (Ksh 1100)</option>
+              <option value="Rabbit Pellets" data-price="900">Rabbit Pellets (Ksh 900)</option>
+              <option value="Mineral Blocks" data-price="600">Mineral Blocks (Ksh 600)</option>
+            </optgroup>
+            <optgroup label="Farm Tools & Accessories">
+              <option value="Knapsack Sprayer" data-price="2500">Knapsack Sprayer (Ksh 2500)</option>
+              <option value="Watering Can" data-price="400">Watering Can (Ksh 400)</option>
+              <option value="Gumboots" data-price="700">Gumboots (Ksh 700)</option>
+              <option value="Gloves" data-price="200">Gloves (Ksh 200)</option>
+              <option value="Pruning Shears" data-price="600">Pruning Shears (Ksh 600)</option>
+              <option value="Hoe" data-price="350">Hoe (Ksh 350)</option>
+              <option value="Rake" data-price="300">Rake (Ksh 300)</option>
+              <option value="Wheelbarrow" data-price="3500">Wheelbarrow (Ksh 3500)</option>
+              <option value="Sprinkler" data-price="900">Sprinkler (Ksh 900)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label for="quantity" class="block font-medium mb-1">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" class="w-full border rounded px-3 py-2" required />
+        </div>
+        <div>
+          <button type="button" id="calcTotal" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 w-full">Calculate Total</button>
+        </div>
+        <div id="posResult" class="font-bold text-lg text-green-700"></div>
+        <div class="flex space-x-2 mt-2">
+          <button type="button" id="sendWhatsApp" class="bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 flex-1">Send via WhatsApp</button>
+          <button type="button" id="sendEmail" class="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 flex-1">Send via Email</button>
+        </div>
+      </form>
+    </aside>
+    </section>
+
+    <section id="video" class="bg-gradient-to-br from-white via-lime-50 to-green-100 rounded-xl shadow p-6 mb-6 border border-lime-200">
+      <h2 class="text-xl font-semibold mb-2">Watch Our Farm Demo</h2>
+      <video controls class="w-full rounded">
+        <source src="assets/videos/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Feedback Section (standalone) -->
+    <section id="feedback" class="bg-gradient-to-br from-lime-50 via-white to-emerald-50 rounded-xl shadow p-6 mb-8 border border-lime-200 max-w-2xl mx-auto">
+    <h2 class="text-xl font-bold mb-4 text-emerald-800 flex items-center">📝 Customer Feedback</h2>
+    <!-- Testimonials Slideshow from previous buyers -->
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold text-lime-700 mb-2">What our customers say</h3>
+      <div class="overflow-hidden rounded shadow border border-lime-200 bg-white/80" style="height: 60px; position: relative;">
+        <div id="testimonial-transform-wrapper" style="height: 100%; width: 200%; display: flex; align-items: center; transition: transform 0.7s cubic-bezier(.4,2,.6,1); will-change: transform;">
+          <div class="w-1/2 flex-shrink-0 flex items-center justify-center" id="testimonial-current">
+            <span class="w-full text-center text-gray-700 italic block" style="white-space: normal;">"Great service and genuine products. My crops have never looked better!" <span class="text-emerald-700 font-bold">— Mary K., Farmer</span></span>
+          </div>
+          <div class="w-1/2 flex-shrink-0 flex items-center justify-center" id="testimonial-next">
+            <!-- Next testimonial will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Slideshow animation for testimonials using transform
+      (function() {
+        const testimonials = [
+          { html: '<span class="w-full text-center text-gray-700 italic block" style="white-space: normal;">"Great service and genuine products. My crops have never looked better!" <span class="text-emerald-700 font-bold">— Mary K., Farmer</span></span>' },
+          { html: '<span class="w-full text-center text-gray-700 italic block" style="white-space: normal;">"Fast delivery and helpful advice. Highly recommend Angemos!" <span class="text-lime-700 font-bold">— John M., Livestock Owner</span></span>' },
+          { html: '<span class="w-full text-center text-gray-700 italic block" style="white-space: normal;">"Affordable prices and a wide range of products. Will buy again." <span class="text-green-700 font-bold">— Faith N., Agro Dealer</span></span>' }
+        ];
+        const wrapper = document.getElementById('testimonial-transform-wrapper');
+        const current = document.getElementById('testimonial-current');
+        const next = document.getElementById('testimonial-next');
+        if (!wrapper || !current || !next) return;
+        let idx = 0;
+        let animating = false;
+        function showTestimonial(nextIdx) {
+          if (animating) return;
+          animating = true;
+          // Set next testimonial
+          next.innerHTML = testimonials[nextIdx].html;
+          // Slide wrapper to left
+          wrapper.style.transform = 'translateX(-50%)';
+          setTimeout(() => {
+            // After animation, move next to current, reset wrapper
+            current.innerHTML = testimonials[nextIdx].html;
+            wrapper.style.transition = 'none';
+            wrapper.style.transform = 'translateX(0)';
+            // Force reflow
+            void wrapper.offsetWidth;
+            wrapper.style.transition = 'transform 0.7s cubic-bezier(.4,2,.6,1)';
+            animating = false;
+          }, 700);
+        }
+        setInterval(() => {
+          let nextIdx = (idx + 1) % testimonials.length;
+          showTestimonial(nextIdx);
+          idx = nextIdx;
+        }, 2000);
+      })();
+    </script>
+    <p class="mb-4 text-gray-700">We value your feedback! Please let us know about your experience with Angemos Enterprises Agro-Chemicals Ltd.</p>
+    <form action="mailto:angelmakaa@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+      <div>
+        <label for="fbName" class="block font-medium mb-1">Your Name</label>
+        <input type="text" id="fbName" name="Name" required class="w-full border rounded px-3 py-2" />
+      </div>
+      <div>
+        <label for="fbContact" class="block font-medium mb-1">Contact (Phone or Email)</label>
+        <input type="text" id="fbContact" name="Contact" required class="w-full border rounded px-3 py-2" />
+      </div>
+      <div>
+        <label class="block font-medium mb-1">How would you rate us?</label>
+        <select name="Rating" id="fbRating" required class="w-full border rounded px-3 py-2">
+          <option value="">Select Rating</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Average</option>
+          <option>Poor</option>
+        </select>
+      </div>
+      <div>
+        <label for="fbComments" class="block font-medium mb-1">Comments</label>
+        <textarea id="fbComments" name="Comments" rows="3" required class="w-full border rounded px-3 py-2"></textarea>
+      </div>
+      <button type="submit" class="bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700 font-bold">Submit Feedback</button>
+    </form>
+  </section>
+      <h2 class="text-2xl font-bold mb-4 text-emerald-800 flex items-center"><svg class="w-7 h-7 mr-2 text-lime-600 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.72 11.06a2.25 2.25 0 0 0-2.98-2.98l-1.1.37a2.25 2.25 0 0 1-2.83-2.83l.37-1.1a2.25 2.25 0 0 0-2.98-2.98l-1.1.37a2.25 2.25 0 0 1-2.83-2.83l.37-1.1A2.25 2.25 0 0 0 2.25 2.25l-.37 1.1a2.25 2.25 0 0 1-2.83 2.83l-1.1-.37A2.25 2.25 0 0 0 .25 7.25l.37 1.1a2.25 2.25 0 0 1 2.83 2.83l-1.1.37a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1A2.25 2.25 0 0 0 21.75 21.75l.37-1.1a2.25 2.25 0 0 1 2.83-2.83l1.1.37A2.25 2.25 0 0 0 23.75 16.75l-.37-1.1a2.25 2.25 0 0 1-2.83-2.83l1.1-.37z"/></svg>Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-emerald-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12.414a2 2 0 0 0-2.828 0l-4.243 4.243a8 8 0 1 1 11.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/></svg>
+            <span class="font-semibold text-gray-700">Kwa Dc, Makueni, Kenya</span>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8m-9 13V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"/></svg>
+            <a href="mailto:angelmakaa@gmail.com" class="font-semibold text-gray-700 hover:text-blue-700">angelmakaa@gmail.com</a>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-lime-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm16 0h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>
+            <span class="font-semibold text-gray-700">Mon - Sat, 8:00am - 5:00pm</span>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-emerald-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4zm6 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-4zm6 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-4z"/></svg>
+            <a href="tel:+254726414961" class="font-semibold text-gray-700 hover:text-emerald-700">+254 726 414 961</a>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow border border-lime-200">
+    </section>
+
+    <!-- Contact Section (standalone) -->
+    <section id="contact" class="bg-gradient-to-br from-white via-emerald-50 to-lime-100 rounded-xl shadow p-6 mb-6 border border-emerald-200">
+      <h2 class="text-2xl font-bold mb-4 text-emerald-800 flex items-center"><svg class="w-7 h-7 mr-2 text-lime-600 inline" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.72 11.06a2.25 2.25 0 0 0-2.98-2.98l-1.1.37a2.25 2.25 0 0 1-2.83-2.83l.37-1.1a2.25 2.25 0 0 0-2.98-2.98l-1.1.37a2.25 2.25 0 0 1-2.83-2.83l.37-1.1A2.25 2.25 0 0 0 2.25 2.25l-.37 1.1a2.25 2.25 0 0 1-2.83 2.83l-1.1-.37A2.25 2.25 0 0 0 .25 7.25l.37 1.1a2.25 2.25 0 0 1 2.83 2.83l-1.1.37a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1a2.25 2.25 0 0 0 2.98 2.98l1.1-.37a2.25 2.25 0 0 1 2.83 2.83l-.37 1.1A2.25 2.25 0 0 0 21.75 21.75l.37-1.1a2.25 2.25 0 0 1 2.83-2.83l1.1.37A2.25 2.25 0 0 0 23.75 16.75l-.37-1.1a2.25 2.25 0 0 1-2.83-2.83l1.1-.37z"/></svg>Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-emerald-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12.414a2 2 0 0 0-2.828 0l-4.243 4.243a8 8 0 1 1 11.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 1 0-6 0 3 3 0 0 0 6 0z"/></svg>
+            <span class="font-semibold text-gray-700">Kwa Dc, Makueni, Kenya</span>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8m-9 13V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"/></svg>
+            <a href="mailto:angelmakaa@gmail.com" class="font-semibold text-gray-700 hover:text-blue-700">angelmakaa@gmail.com</a>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-lime-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm16 0h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg>
+            <span class="font-semibold text-gray-700">Mon - Sat, 8:00am - 5:00pm</span>
+          </div>
+          <div class="flex items-center bg-white/80 rounded-lg shadow p-4 border border-lime-200">
+            <svg class="w-6 h-6 text-emerald-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4zm6 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-4z"/></svg>
+            <a href="tel:+254726414961" class="font-semibold text-gray-700 hover:text-emerald-700">+254 726 414 961</a>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow border border-lime-200">
+          <iframe
+            src="https://www.google.com/maps?q=Kwa+Dc,+Makueni,+Kenya&output=embed"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- ...existing code... -->
+  <script>
+    // POS Sidebar open/close logic
+    const posTabBtn = document.getElementById('posTabBtn');
+    const posSidebar = document.getElementById('posSidebar');
+    const closePosSidebar = document.getElementById('closePosSidebar');
+    posTabBtn.onclick = function() {
+      posSidebar.classList.remove('translate-x-full');
+    };
+    closePosSidebar.onclick = function() {
+      posSidebar.classList.add('translate-x-full');
+    };
+    // Log Sidebar open/close logic
+    const logTabBtn = document.getElementById('logTabBtn');
+    const logSidebar = document.getElementById('logSidebar');
+    const closeLogSidebar = document.getElementById('closeLogSidebar');
+    logTabBtn.onclick = function() {
+      logSidebar.classList.remove('-translate-x-full');
+    };
+    closeLogSidebar.onclick = function() {
+      logSidebar.classList.add('-translate-x-full');
+    };
+    // POS calculation logic and log
+    const logList = document.getElementById('logList');
+    document.getElementById('calcTotal').onclick = function() {
+      var productSelect = document.getElementById('product');
+      var price = parseInt(productSelect.options[productSelect.selectedIndex].getAttribute('data-price')) || 0;
+      var quantity = parseInt(document.getElementById('quantity').value) || 0;
+      var resultDiv = document.getElementById('posResult');
+      if (!price || !quantity) {
+        resultDiv.textContent = 'Please select a product and enter quantity.';
+        resultDiv.style.color = '#e53e3e';
+        return;
+      }
+      var total = price * quantity;
+      resultDiv.textContent = 'Total: Ksh ' + total.toLocaleString();
+      resultDiv.style.color = '#15803d';
+      // Add to log
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const logItem = document.createElement('li');
+      logItem.innerHTML = `<span class='font-semibold'>${productSelect.value}</span> x ${quantity} = <span class='text-green-700 font-bold'>Ksh ${total.toLocaleString()}</span> <span class='text-gray-400 ml-2'>[${time}]</span>`;
+      logList.prepend(logItem);
+      // Store last transaction for sharing
+      window.lastSale = {
+        product: productSelect.value,
+        quantity: quantity,
+        total: total,
+        time: time
+      };
+    };
+
+    // WhatsApp and Email sharing logic
+    document.getElementById('sendWhatsApp').onclick = function() {
+      if (!window.lastSale) {
+        alert('Please calculate a sale first.');
+        return;
+      }
+      const msg = `POS Sale at Angemos Enterprises:%0AProduct: ${window.lastSale.product}%0AQuantity: ${window.lastSale.quantity}%0ATotal: Ksh ${window.lastSale.total.toLocaleString()}%0ATime: ${window.lastSale.time}`;
+      const waUrl = `https://wa.me/?text=${msg}`;
+      window.open(waUrl, '_blank');
+      // Show a popup confirmation on the website
+      showPopup('WhatsApp message window opened. Complete your order in WhatsApp.');
+    };
+    document.getElementById('sendEmail').onclick = function() {
+      // Simple popup function
+      function showPopup(message) {
+        let popup = document.createElement('div');
+        popup.textContent = message;
+        popup.className = 'fixed top-8 right-8 bg-emerald-600 text-white px-6 py-3 rounded shadow-lg z-50 animate-bounce';
+        document.body.appendChild(popup);
+        setTimeout(() => { popup.remove(); }, 3500);
+      }
+      if (!window.lastSale) {
+        alert('Please calculate a sale first.');
+        return;
+      }
+      const subject = encodeURIComponent('POS Sale at Angemos Enterprises');
+      const body = encodeURIComponent(`Product: ${window.lastSale.product}\nQuantity: ${window.lastSale.quantity}\nTotal: Ksh ${window.lastSale.total.toLocaleString()}\nTime: ${window.lastSale.time}`);
+      const mailto = `mailto:?subject=${subject}&body=${body}`;
+      window.open(mailto, '_blank');
+    };
+  </script>
+    <p>&copy; 2025 Angemos Enterprises Agro-Chemicals Ltd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
